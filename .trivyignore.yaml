@@ -1,0 +1,3 @@
+misconfigurations:
+  # No need for HEALTHCHECK.
+  - id: AVD-DS-0026
