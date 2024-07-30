@@ -1,6 +1,8 @@
 ARG BASE_IMAGE
 FROM $BASE_IMAGE
 
+RUN useradd puppet
+
 RUN apt-get update \
     && apt-get upgrade -y \
     && apt-get install -y --no-install-recommends ca-certificates bash git ruby \
@@ -16,7 +18,7 @@ RUN apt-get update \
 
 COPY scripts/* /usr/local/bin/
 
-USER nobody
+USER puppet
 
 # https://github.com/opencontainers/image-spec/blob/main/annotations.md
 LABEL org.opencontainers.image.revision=${GIT_COMMIT_SHA}
