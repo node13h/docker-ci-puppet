@@ -156,7 +156,7 @@ publish-image:
     - buildah manifest push --all "${PUBLISH_IMAGE}:${VERSION_SEMVER}" "docker://${PUBLISH_IMAGE}:${VERSION_SEMVER}"
     - printf 'Pushed %s\n' "${PUBLISH_IMAGE}:${VERSION_SEMVER}"
     - if [ -n "${VERSION_IS_LATEST_RELEASE:-}" ]; then
-        buildah push "$IMAGE" "${CI_REGISTRY_IMAGE}:latest";
+        buildah manifest push "${PUBLISH_IMAGE}:${VERSION_SEMVER}" "docker://${PUBLISH_IMAGE}:latest";
         printf "Pushed %s\n" "${PUBLISH_IMAGE}:latest";
       fi
 
