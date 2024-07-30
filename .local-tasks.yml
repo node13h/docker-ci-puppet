@@ -1,0 +1,15 @@
+variables:
+  RUBY_CI_IMAGE: docker.io/ruby:3.1.6-bookworm
+
+stages:
+  - task
+
+update-bundle:
+  stage: task
+  image: $RUBY_CI_IMAGE
+  script:
+    - bundler update
+  artifacts:
+    paths:
+      - Gemfile.lock
+    expire_in: 1 day
