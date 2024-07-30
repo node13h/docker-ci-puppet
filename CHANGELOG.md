@@ -1,5 +1,11 @@
 # Changelog
 
+## [0.1.3] - 2024-07-30
+
+### Fixed
+
+- Add missing home directory for the puppet user.
+
 ## [0.1.2] - 2024-07-30
 
 ### Fixed

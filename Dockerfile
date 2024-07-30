@@ -1,7 +1,7 @@
 ARG BASE_IMAGE
 FROM $BASE_IMAGE
 
-RUN useradd puppet
+RUN useradd -m puppet
 
 RUN apt-get update \
     && apt-get upgrade -y \
